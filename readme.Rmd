@@ -1,0 +1,32 @@
+---
+# ReadMe
+
+
+##Course Project Objective
+You should create one R script called run_analysis.R that does the following.
+
+1.Merges the training and the test sets to create one data set.
+
+2.Extracts only the measurements on the mean and standard deviation for each measurement.
+
+3.Uses descriptive activity names to name the activities in the data set
+
+4.Appropriately labels the data set with descriptive activity names.
+
+5.Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+
+##Steps
+1.Download the data source and put into a folder (called "temp") on the R sessions local directory.
+
+2.Unzip the file; It should be in a folder called "UCI HAR Dataset".
+
+3.Save run_analysis.R  in the  R sessions local directory 
+
+4.Run source("run_analysis.R") which will be sued to generate a new file  tiny_data.txt in your working directory.
+
+5.If file or folder doesnt exits the files will be downloaded and placed in the appriopiate directory and the process combleted.
+
+
+Dependencies
+ run_analysis.R  file will help you to install the dependencies automatically. It depends on  reshape2  and  data.table .

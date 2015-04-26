@@ -1,0 +1,55 @@
+---
+title: "Code Book"
+
+---
+
+This is a code book that describes the variables, the data, and the transformations/work performed to get the Tidy datasets
+
+##The data source 
+Original data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+Original description of the dataset:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
+##Data Set Information
+
+Measurements were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a Samsung Galaxy S II on their waist. Using the embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity measurements were captured at a constant rate of 50Hz. The obtained dataset were randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+
+##The data
+###The data that us Required is contained in the following files:
+
+•'README.txt'
+
+•'features_info.txt': Shows information about the variables used on the feature vector.
+
+•'features.txt': List of all features.
+•'activity_labels.txt': Links the class labels with their activity name.
+
+•'train/X_train.txt': Training set.
+•'test/X_test.txt': Test set.
+
+•'train/y_train.txt': Training labels.
+•'test/y_test.txt': Test labels
+
+
+##Transformation details
+There are 6 components of the transformation:
+1.Combine the training and test sets to create one dataset.
+2.Name the measurements in the data set using the features labels. 
+3.Select only measurements on the mean and standard deviation for each measurement in the combined dataset
+4.Name the activities with descriptive activity names.
+5.Create a tidy data set (using melt)
+6.Create a second tidy data set with the average of each variable for each activity and each subject.
+
+
+###The run_analysis.R script implements the above steps:(Requires reshape2 & dplyr).
+1.Loads the data into a list.
+
+2.Combines the datasets and provides Descriptive  labels.
+
+3.Extracts measurements on the mean and standard deviation only.
+
+4.Creates a two Tidy dataset, with teh second Tidy dataset providing a summary of the mean measurements for each variable for each subject by activity.
